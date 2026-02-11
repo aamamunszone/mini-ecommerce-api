@@ -18,3 +18,14 @@ exports.addOrderItems = async (req, res) => {
     res.status(201).json(createdOrder);
   }
 };
+
+// @desc    Get logged in user orders
+// @route   GET /api/orders/myorders
+exports.getMyOrders = async (req, res) => {
+  try {
+    const orders = await Order.find({ user: req.user._id });
+    res.json(orders);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
