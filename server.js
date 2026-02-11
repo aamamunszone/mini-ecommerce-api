@@ -20,6 +20,12 @@ app.get('/', (req, res) => {
   res.send('Mini E-Commerce API is Running Successfully...');
 });
 
+// ========== ROUTES START ==========
+
+app.use('/api/auth', require('./routes/authRoutes'));
+
+// ========== ROUTES END ==========
+
 // Server Start
 app.listen(port, () => {
   console.log(
