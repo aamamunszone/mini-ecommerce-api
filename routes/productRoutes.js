@@ -4,8 +4,8 @@ const {
   getProducts,
   createProduct,
 } = require('../controllers/productController');
-const { protect } = require('../middleware/authMiddleware');
+const { protect, admin } = require('../middleware/authMiddleware');
 
-router.route('/').get(getProducts).post(protect, createProduct);
+router.route('/').get(getProducts).post(protect, admin, createProduct);
 
 module.exports = router;
