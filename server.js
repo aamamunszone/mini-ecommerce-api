@@ -23,6 +23,7 @@ app.get('/', (req, res) => {
 // ========== ROUTES START ==========
 
 app.use('/api/auth', require('./routes/authRoutes'));
+app.use('/api/products', require('./routes/productRoutes'));
 
 // ========== ROUTES END ==========
 
