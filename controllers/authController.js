@@ -38,3 +38,9 @@ exports.loginUser = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
+
+// @desc    Get user profile
+// @route   GET /api/auth/profile
+exports.getUserProfile = async (req, res) => {
+  res.json(req.user);
+};
